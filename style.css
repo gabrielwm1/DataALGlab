@@ -1,0 +1,28 @@
+body{
+    background-color: slategray;
+    display: flex;
+    justify-content: center;
+    height:100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.main-form{
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+}
+.display-que{
+    height: 500px;
+    width: 500px;
+
+}
+
+.display-que{
+    display: inline-block;
+}
+
