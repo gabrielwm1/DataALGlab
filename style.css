@@ -25,4 +25,9 @@ body{
 .display-que{
     display: inline-block;
 }
+.probEntry{
+    display: inline-block;
+    background-color: pink;
+    width: 30%;
+}
 

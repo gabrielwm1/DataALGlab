@@ -13,45 +13,56 @@ class Que {
     }
     addEnd(info){
      this.entries.push(info);
+    // console.log(this.entries);
     }
     takeAwayend(info){
         this.entries.pop(info);
     }
     addBeginning(info){
         this.entries.shift(info);
+        
     }
     takeAwayBeg(info){
         this.entries.unshift(info);
     }
     display(){
-        $(document).querySelector("display-que").innerHTML = "";
-        let count = 0;
+        console.log(this.entries);
         for (let entry of this.entries){
-            const Entry = document.createElement("section");
-            const title = $("title").attr("title", $("input").eq(0).val());
-            const description = $("description").attr("description", $("input").eq(1).val());
-            problem.addBeginning(new Entry(title, description));
-
-
-        }
+            $(".display-que").append(`
+            <section class="probEntry">
+                Title: ${entry.title}</br>
+                Description: ${entry.description}
+            </section>
+        `);
+        }   
     }
 }
 
+
+
+    //     document.querySelector(".display-que").innerHTML = "";
+    //     let count = 0;
+  
+            
+
+
+    //     }
+    // }
+
+
 let problem = new Que;
-problem.display();
 
 $(document).ready(() => {
-
+    let title;
+    let description;
     $(document).on("click", ".add", (event) => {
+        title = $(".title").val();
+        description = $(".description").val();
         
-        console.log(description);
-        display();
-        $(".display-que").append(`
-        <section class="probEntry">
-            Title: ${$(title).attr("title")}</br>
-            Description: ${$(description).attr("description")}
-      </section>
-      `);
+        problem.addEnd(new Entry(title, description));
+        problem.display();
+
+
     });
 });
 
